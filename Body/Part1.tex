@@ -1,0 +1,40 @@
+\section{Example section}
+\subsection{Lorem Ipsum}
+\lipsum[2-3]
+
+\begin{minipage}{\textwidth}
+    \begin{lstlisting} [style=default, language=java*, caption={Some code snippet}, gobble=4]
+        /*
+        * Run method for the Agent
+        */
+        @Override
+        public void run() {
+            for (int i = 0; i < MAX_SANDWICHES; i++) {
+                System.out.println("\nSandwich " + (i + 1));
+                table.placeIngredients();
+                try {
+                    Thread.sleep(50);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                    return;
+                }
+            }
+            table.signalEnd();
+
+            System.out.println("\nEnding Thread Agent");
+        }
+        
+    \end{lstlisting}
+\end{minipage}
+
+% \subsection{Other way to do it}
+% \lipsum[1]
+
+% \begin{minipage}{\textwidth}
+%     \lstinputlisting[
+%         style=default,
+%         language=java*,
+%         linerange={13-17},
+%         caption={Some code snippet},
+%     ]{Code/Table.java}
+% \end{minipage}
