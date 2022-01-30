@@ -1,0 +1,104 @@
+\usepackage[utf8]{inputenc}
+
+% Allow for insertion of images
+\usepackage{graphicx}
+\graphicspath{{images/}}
+
+%Allow creation of links. colorlinks is used to make the links coloured
+\usepackage[colorlinks, urlcolor = blue]{hyperref}
+
+%Code blocks
+\usepackage{xcolor}
+\usepackage{listings}
+\definecolor{codeGreen}{rgb}{0,0.6,0}
+\definecolor{codeGray}{rgb}{0.5,0.5,0.5}
+\definecolor{codeBlue}{HTML}{0000FF}
+\definecolor{codePurple}{HTML}{A020F0}
+\definecolor{codeYellow}{HTML}{e48400}
+
+\lstdefinestyle{default}{
+  breaklines=true,
+  basicstyle=\ttfamily\footnotesize,
+  breakatwhitespace=false,
+  captionpos=b,
+  keepspaces=true,
+  showspaces=false,
+  showstringspaces=false,
+  showtabs=false,
+  tabsize=2,
+  frame=single,
+  numbers=left,
+}
+
+\lstdefinestyle{colorful}{
+  commentstyle=\color{codeGray},
+  keywordstyle=[1]{\color{codeBlue}},
+  keywordstyle=[2]{\color{codePurple}},
+  keywordstyle=[3]{\color{codeYellow}},
+  stringstyle=\color{codeGreen},
+}
+
+\lstdefinelanguage{java*}{
+  language=java,
+  % These are the keywords that will be colored differently
+  morekeywords=[2]{
+      MAX_SANDWICHES,
+      placeIngredients,
+      sleep,
+      printStackTrace,
+      println,
+      run
+    },
+  morekeywords=[3]{
+      @Override
+    },
+  style=colorful
+}
+
+% \lstset{style=mystyle}
+
+% Title Format change to: Section #
+\usepackage{titlesec}
+\titleformat{\section}{\bfseries\Large}{Section \arabic{section}}{6pt}{}
+
+% Allow for subtitle
+\usepackage{titling}
+\newcommand{\subtitle}[1]{
+  \posttitle{
+    \par\end{center}
+    \begin{center}\large#1\end{center}
+    \vskip0.5em}
+}
+
+% Allow for partitioning of files
+\usepackage{subfiles}
+
+% Date Formatting
+\usepackage{datetime}
+\newdateformat{monthyeardate}{\monthname[\THEMONTH] \THEYEAR}
+
+% Allow for justified text
+\usepackage{ragged2e}
+\justifying
+% Remove auto-indent and add a paragraph gap
+\usepackage{parskip}
+
+% Allows wrapping of figures
+\usepackage{wrapfig}
+
+
+% Allows to change the size of the box around captions and tables
+% using the \captionsetup[]{skip=0pt} command
+\usepackage{caption}
+% could be used to do that to a group of captions
+% \captionsetup[wrapfigure]{skip=0pt}
+
+
+\usepackage{lipsum}
+
+
+% \usepackage{float}
+
+% \floatstyle{ruled}
+% \newfloat{lstlisting}{h}{lop}
+% \floatname{program}{Program}
